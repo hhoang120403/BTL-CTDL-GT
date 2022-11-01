@@ -155,13 +155,13 @@ int main()
 {
     Hang h;
     h.doc_file();
-    for (auto &it : v1)
+    for (DanhSach*it1=v1.begin();it1!=v1.end();it1++)
     {
-        cout << it;
+        cout << *it1;
     }
-    for (auto &it : v2)
+    for (HoaDon*it2=v2.begin();it2!=v2.end();it2++)
     {
-        cout << it;
+        cout << *it2;
     }
     h.ghi_file();
 

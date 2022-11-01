@@ -54,4 +54,3 @@ class vector_reverse_iterator{
 		}
 };
 #endif
-

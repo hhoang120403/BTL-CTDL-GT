@@ -4,6 +4,12 @@
 using namespace std;
 
 template<class T>
+class vector_iterator;
+
+template <class T>
+class vector_reverse_iterator;
+
+template<class T>
 class Vector{
     private:
         unsigned int cap,n;
@@ -33,16 +39,18 @@ class Vector{
         void extend(int newcap);
 
         // Bo lap iterator
-        T* begin(){
+        typedef T *iterator;
+		typedef vector_reverse_iterator<T> reverse_iterator;
+        iterator begin(){
         	return V;
 		}
-        T* end(){
+        iterator end(){
         	return V + n;
 		}
-        T* rbegin(){
+        reverse_iterator rbegin(){
         	return V + (n-1);
 		}
-        T* rend(){
+        reverse_iterator rend(){
         	return V - 1;	
 		}
 };

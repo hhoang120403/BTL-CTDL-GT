@@ -45,7 +45,7 @@ class Vector{
         	return V;
 		}
         iterator end(){
-        	return V + n;
+        	return (V + n);
 		}
         reverse_iterator rbegin(){
         	return V + (n-1);

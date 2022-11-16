@@ -1,79 +1,8 @@
 #include"Vector.h"
 #include"Vector.cpp"
 #include"Vector_iterator.cpp"
-
-int cnt = 0;
-class DanhSach
-{
-private:
-    string mh, th, nsx;
- 
-public:
-    DanhSach()
-    {
-        ;
-    };
-    DanhSach(string mh, string th, string nsx);
-    friend istream &operator>>(istream &is, DanhSach &p);
-    friend ostream &operator<<(ostream &os, DanhSach p);
-    friend void display();
-};
- 
-istream &operator>>(istream &is, DanhSach &p)
-{
-    getline(is, p.mh);
-    getline(is, p.th);
-    getline(is, p.nsx);
-}
- 
-ostream &operator<<(ostream &os, DanhSach p)
-{
-    os << "| " << setw(10) << left << p.mh
-       << "| " << setw(20) << left << p.th
-       << "| " << setw(20) << left << p.nsx
-       << "|" << endl;
-    return os;
-}
- 
-class HoaDon
-{
-private:
-    string mhd, mh, lhd, day;
-    int sl, price;
- 
-public:
-    HoaDon()
-    {
-        ;
-    };
-    HoaDon(string mhd, string mh, string lhd, int sl, string day, double price);
-    friend istream &operator>>(istream &is, HoaDon &p);
-    friend ostream &operator<<(ostream &os, HoaDon p);
-};
- 
-istream &operator>>(istream &is, HoaDon &p)
-{
-    getline(is, p.mhd);
-    getline(is, p.mh);
-    getline(is, p.lhd);
-    is >> p.sl;
-    is.ignore();
-    getline(is, p.day);
-    is >> p.price;
-    is.ignore();
-}
- 
-ostream &operator<<(ostream &os, HoaDon p)
-{
-    os << "| " << setw(12) << left << p.mhd
-       << "| " << setw(10) << left << p.mh
-       << "| " << setw(14) << left << p.lhd
-       << "| " << setw(10) << left << p.sl
-       << "| " << setw(15) << left << p.day
-       << "| " << setw(13) << left << p.price
-       << "| " << endl;
-    return os;
-}
+#include"DanhSach.cpp"
+#include"hoadon.cpp"
  
 Vector<DanhSach> v1;
 Vector<HoaDon> v2;
